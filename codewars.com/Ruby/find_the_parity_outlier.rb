@@ -1,5 +1,5 @@
 def find_outlier(integers)
-  integers.find { |n| ([0, 1].include? integers[0..2].count(&:even?)) ? n.even? : n.odd? }
+  integers.find { |n| integers[0..2].count(&:even?) < 2 ? n.even? : n.odd? }
   # integers.partition(&:odd?).find(&:one?).first
 end
 
